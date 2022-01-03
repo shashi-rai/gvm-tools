@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+option go_package = "github.com/shashi-rai/gvm-tools/pkg/api/v1";
+import "google/protobuf/timestamp.proto";
+
+service GvmService {
+    rpc GetStatus(GvmRequest) returns (GvmReply) {}
+}
+
+message GvmRequest {
+    string name = 1;
+}
+
+message GvmReply {
+    string message = 1;
+}
